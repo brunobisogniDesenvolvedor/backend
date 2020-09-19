@@ -1,15 +1,14 @@
-const path = require("path");
-const express = require("express");
-const app = express();
-const bodyParser = require("body-parser");
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
 
-const routes = require("./routes");
+const routes = require('./routes')
 
-require("./database/index");
-require("dotenv").config();
+require('./database/index')
+require('dotenv').config()
 
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
-app.use(routes);
+app.use(routes)
 
-module.exports = app;
+module.exports = app

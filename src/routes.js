@@ -1,14 +1,13 @@
-const express = require('express');
-const routes = express.Router();
+const express = require('express')
+const routes = express.Router()
+const controllerUser = require('./controllers/user')
 
-
-
-// Routes 
+// Routes
 
 routes.get('/', (req, res) => {
-    res.send('hello word');
-});
+  res.send('hello word')
+})
 
+routes.post('/user', controllerUser.created)
 
-
-module.exports = routes;
+module.exports = routes
