@@ -1,6 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 const controllerUser = require('./controllers/user')
+const controllerEscavador = require('./controllers/escavador')
 
 // Routes
 
@@ -9,5 +10,7 @@ routes.get('/', (req, res) => {
 })
 
 routes.post('/user', controllerUser.created)
+
+routes.get('/process', controllerEscavador.getDataProcess)
 
 module.exports = routes
