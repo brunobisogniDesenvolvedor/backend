@@ -3,8 +3,9 @@ const reqPromise = require('request-promise')
 module.exports = {
 
   getDataProcess: async (req, res) => {
-    const { phone, number_process, secret_key } = req.body
-
+    const { phone, secret_key } = req.body
+    const { number_process } = req.query
+    console.log(number_process)
     const response = await reqPromise.get({
       uri: `https://api.escavador.com/api/v1/processos/numero/${number_process}`,
       headers: {
@@ -13,7 +14,7 @@ module.exports = {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       }
-    })
+    }).catch(err => { return res.status(400).json(err) })
 
     const responseJson = JSON.parse(response)
     const lastUpdate = responseJson[0].ultimas_movimentacoes_resumo[0]
