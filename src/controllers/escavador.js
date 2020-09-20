@@ -15,7 +15,9 @@ module.exports = {
       }
     })
 
-    return res.status(200).json(JSON.parse(response))
+    const test = JSON.parse(response)
+
+    return res.status(200).json(test[0].ultimas_movimentacoes_resumo)
   }
 
 }

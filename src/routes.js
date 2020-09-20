@@ -11,6 +11,6 @@ routes.get('/', (req, res) => {
 
 routes.post('/user', controllerUser.created)
 
-routes.get('/process', controllerEscavador.getDataProcess)
+routes.get('/ultimasmovimentacoes', controllerEscavador.getDataProcess)
 
 module.exports = routes
